@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import logo from "./assets/revive-logo.png"; // apna screenshot wala logo lagana
+import logo from "./assets/revive-logo.png";
+import whatsappLogo from "./assets/whatsapp.png";   // WhatsApp logo
+import linkedinLogo from "./assets/linkedin.png";   // LinkedIn logo
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -37,21 +39,25 @@ export default function App() {
         >
           🌐 Company Website
         </a>
+
         <a
-          href="https://www.linkedin.com/company/example"
+          href="https://www.linkedin.com/in/wajahat-ali-khan-4b8675215"
           target="_blank"
           rel="noopener noreferrer"
           className="btn"
         >
-          💼 LinkedIn
+          <img src={linkedinLogo} alt="LinkedIn" className="icon" />
+          LinkedIn
         </a>
+
         <a
           href="https://wa.me/923001234567"
           target="_blank"
           rel="noopener noreferrer"
           className="btn"
         >
-          📱 WhatsApp
+          <img src={whatsappLogo} alt="WhatsApp" className="icon" />
+          WhatsApp
         </a>
       </div>
     </div>
