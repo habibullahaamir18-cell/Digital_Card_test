@@ -26,8 +26,8 @@ export default function App() {
       <img src={logo} alt="Company Logo" className="logo" />
 
       {/* Text */}
-      <h1>Welcome to Revive</h1>
-      <p>Your Digital Business Card</p>
+      <h1>DR Murtaza Najabat Ali</h1>
+      <p></p>
 
       {/* Buttons */}
       <div className="buttons">
