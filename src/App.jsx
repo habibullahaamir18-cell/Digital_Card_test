@@ -41,7 +41,7 @@ export default function App() {
         </a>
 
         <a
-          href="https://www.linkedin.com/in/wajahat-ali-khan-4b8675215"
+          href="https://www.linkedin.com/in/prof-dr-murtaza-najabat-ali-ceng-uk-fimeche-pe-55a4469/"
           target="_blank"
           rel="noopener noreferrer"
           className="btn"
@@ -51,7 +51,7 @@ export default function App() {
         </a>
 
         <a
-          href="https://wa.me/923001234567"
+          href="https://wa.me/923348558828"
           target="_blank"
           rel="noopener noreferrer"
           className="btn"
