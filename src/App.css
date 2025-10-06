@@ -66,26 +66,48 @@ p {
   text-decoration: none;
   padding: 12px 18px;
   border-radius: 8px;
-  background: #007bff;
-  color: #fff;
   font-size: 15px;
   font-weight: 500;
   transition: transform 0.2s ease, background 0.3s;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px; /* space between icon & text */
+  gap: 10px;
+  color: #fff;
 }
 
 .btn:hover {
-  background: #0056b3;
   transform: translateY(-2px);
 }
 
+/* Button Colors */
+.btn-website {
+  background: #007bff;
+}
+
+.btn-website:hover {
+  background: #0056b3;
+}
+
+.btn-linkedin {
+  background: #0077B5; /* LinkedIn blue */
+}
+
+.btn-linkedin:hover {
+  background: #005983;
+}
+
+.btn-whatsapp {
+  background: #25D366; /* WhatsApp green */
+}
+
+.btn-whatsapp:hover {
+  background: #1ebe57;
+}
+
+/* Icons */
 .icon {
-  width: 20px;
-  height: 20px;
-  object-fit: contain;
+  font-size: 22px;
 }
 
 /* Animations */

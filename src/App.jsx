@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import logo from "./assets/revive-logo.png";
-import whatsappLogo from "./assets/whatsapp.png";   // WhatsApp logo
-import linkedinLogo from "./assets/linkedin.png";   // LinkedIn logo
+import { FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -35,7 +34,7 @@ export default function App() {
           href="https://www.rmt-usa.com/"
           target="_blank"
           rel="noopener noreferrer"
-          className="btn"
+          className="btn btn-website"
         >
           🌐 Company Website
         </a>
@@ -44,9 +43,9 @@ export default function App() {
           href="https://www.linkedin.com/in/prof-dr-murtaza-najabat-ali-ceng-uk-fimeche-pe-55a4469/"
           target="_blank"
           rel="noopener noreferrer"
-          className="btn"
+          className="btn btn-linkedin"
         >
-          <img src={linkedinLogo} alt="LinkedIn" className="icon" />
+          <FaLinkedin className="icon" />
           LinkedIn
         </a>
 
@@ -54,9 +53,9 @@ export default function App() {
           href="https://wa.me/923348558828"
           target="_blank"
           rel="noopener noreferrer"
-          className="btn"
+          className="btn btn-whatsapp"
         >
-          <img src={whatsappLogo} alt="WhatsApp" className="icon" />
+          <FaWhatsapp className="icon" />
           WhatsApp
         </a>
       </div>
