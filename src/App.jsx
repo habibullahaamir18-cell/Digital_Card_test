@@ -23,7 +23,7 @@ export default function App() {
         <div className="main">
           <div className="container">
             <img src={logo} alt="Company Logo" className="logo" />
-            <h1>DR Murtaza Najabat Ali</h1>
+            <h1>Dr Murtaza Najabat Ali</h1>
             <p></p>
 
             <div className="buttons">
@@ -37,7 +37,7 @@ export default function App() {
               </a>
 
               <a
-                href="https://www.linkedin.com/in/prof-dr-murtaza-najabat-ali-ceng-uk-fimeche-pe-55a4469/"
+                href="https://www.linkedin.com/in/prof-dr-murtaza-najabat-ali-ceng-uk-fimeche-pe-55a4469"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-linkedin"
