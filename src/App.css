@@ -3,133 +3,208 @@ body, html, #root {
   margin: 0;
   padding: 0;
   height: 100%;
-  width: 100%;
-  background: #ffffff; /* clean white */
   font-family: "Segoe UI", Arial, sans-serif;
-  overflow: hidden; /* hide scroll during splash */
+  background: #f8f9fa;
 }
 
 /* Splash Screen */
 .splash-screen {
-  position: fixed;
-  top: 0;
-  left: 0;
+  background: #fff;
   height: 100vh;
-  width: 100vw;
-  background: #ffffff; /* full white background */
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 9999;
 }
 
-.splash-screen img {
-  width: 280px; /* bigger logo */
-  animation: logoPop 1.6s ease-in-out forwards;
+.splash-logo {
+  width: 250px;
+  height: auto;
+  animation: popIn 1.2s ease-in-out forwards;
+  opacity: 0;
 }
 
-/* Main Container */
-.main {
-  height: 100vh;
-  width: 100vw;
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* WebGL background */
+.webgl-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Landing Page */
+.lp {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.lp-hero {
+  position: relative;
   display: flex;
-  align-items: center;       /* vertically center */
-  justify-content: center;   /* horizontally center */
-  background: #ffffff;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
 }
 
-.container {
-  text-align: center;
-  background: #fff;
-  padding: 40px 30px;
+.lp-shell {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.lp-hero-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
   border-radius: 20px;
-  box-shadow: 0px 6px 20px rgba(0,0,0,0.1);
-  width: 90%;
-  max-width: 360px;
-  animation: slideUp 0.8s ease-in-out;
+  padding: 3rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
 }
 
-.logo {
+/* Right Side Text */
+.lp-hero-copy {
+  flex: 1.2;
+  min-width: 320px;
+  margin-left: 2rem;
+  text-align: center; /* ✅ Center align full text area */
+}
+
+.lp-brand {
   width: 120px;
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
 }
 
-h1 {
-  margin: 10px 0;
-  font-size: 24px;
-  font-weight: 600;
+.lp-hero-copy h1 {
+  font-size: 2.2rem;
   color: #222;
+  margin: 0.3rem 0;
+  text-align: center; /* ✅ Center align CEO name */
+  width: 100%;
 }
 
-p {
-  margin-bottom: 25px;
-  font-size: 14px;
+.role {
+  font-size: 1.1rem;
+  font-weight: 600;
   color: #555;
+  margin-bottom: 1rem;
+}
+
+.lead {
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: justify;
+  margin-bottom: 1.5rem;
 }
 
 /* Buttons */
-.buttons {
+.lp-actions {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center; /* ✅ Center buttons */
 }
 
 .btn {
-  text-decoration: none;
-  padding: 12px 18px;
-  border-radius: 8px;
-  font-size: 15px;
-  font-weight: 500;
-  transition: transform 0.2s ease, background 0.3s;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
+  gap: 0.4rem;
+  padding: 0.7rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
   color: #fff;
+  font-weight: 500;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
 }
 
 .btn:hover {
   transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Button Colors */
-.btn-website {
-  background: #007bff;
+.btn.primary {
+  background: #333;
 }
 
-.btn-website:hover {
-  background: #0056b3;
+.btn.blue {
+  background: #0077b5;
 }
 
-.btn-linkedin {
-  background: #0077B5;
+.btn.green {
+  background: #25d366;
 }
 
-.btn-linkedin:hover {
-  background: #005983;
+/* Left Side Image */
+.lp-hero-media {
+  flex: 0.8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 300px;
 }
 
-.btn-whatsapp {
-  background: #25D366;
+.hero-portrait {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 20px;
+  object-fit: cover;
+  opacity: 0.92;
+  transition: opacity 0.3s ease;
 }
 
-.btn-whatsapp:hover {
-  background: #1ebe57;
+.hero-portrait:hover {
+  opacity: 1;
 }
 
-/* Icons */
-.icon {
-  font-size: 22px;
-}
+/* ✅ Responsive Fix */
+@media (max-width: 992px) {
+  .lp-hero-grid {
+    flex-direction: column;
+    text-align: center;
+  }
 
-/* Animations */
-@keyframes logoPop {
-  0% { opacity: 0; transform: scale(0.6); }
-  60% { opacity: 1; transform: scale(1.2); }
-  100% { opacity: 1; transform: scale(1); }
-}
+  .lp-hero-copy {
+    margin-left: 0;
+    margin-top: 2rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
 
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+  .lp-actions {
+    justify-content: center;
+  }
+
+  .lead {
+    text-align: justify;
+  }
+
+  .hero-portrait {
+    max-width: 320px;
+  }
 }
