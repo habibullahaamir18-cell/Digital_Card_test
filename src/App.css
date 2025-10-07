@@ -46,6 +46,9 @@ body, html, #root {
   z-index: 1;
   overflow: hidden;
   padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .lp-hero {
@@ -53,6 +56,7 @@ body, html, #root {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  width: 100%;
 }
 
 .lp-shell {
@@ -65,8 +69,8 @@ body, html, #root {
 .lp-hero-grid {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  background: rgba(255, 255, 255, 0.9);
+  justify-content: center; /* center horizontally */
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
   border-radius: 20px;
   padding: 3rem;
@@ -74,12 +78,38 @@ body, html, #root {
   flex-wrap: wrap;
 }
 
+/* Left Side Image */
+.lp-hero-media {
+  flex: 0.8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 300px;
+}
+
+.hero-portrait {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 20px;
+  object-fit: cover;
+  opacity: 0.92;
+  transition: opacity 0.3s ease;
+}
+
+.hero-portrait:hover {
+  opacity: 1;
+}
+
 /* Right Side Text */
 .lp-hero-copy {
   flex: 1.2;
-  min-width: 320px;
-  margin-left: 2rem;
-  text-align: center; /* Center text on all devices */
+  min-width: 280px;
+  margin: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .lp-brand {
@@ -92,7 +122,6 @@ body, html, #root {
   font-size: 2.2rem;
   color: #222;
   margin: 0.3rem 0;
-  text-align: center;
 }
 
 .role {
@@ -106,8 +135,8 @@ body, html, #root {
   color: #444;
   font-size: 1rem;
   line-height: 1.6;
-  text-align: justify;
   margin-bottom: 1.5rem;
+  text-align: center;
 }
 
 .lead span {
@@ -148,51 +177,16 @@ body, html, #root {
 .btn.blue { background: #0077b5; }
 .btn.green { background: #25d366; }
 
-/* Left Side Image */
-.lp-hero-media {
-  flex: 0.8;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 300px;
-}
-
-.hero-portrait {
-  width: 100%;
-  max-width: 380px;
-  border-radius: 20px;
-  object-fit: cover;
-  opacity: 0.92;
-  transition: opacity 0.3s ease;
-}
-
-.hero-portrait:hover {
-  opacity: 1;
-}
-
 /* Mobile Responsiveness */
 @media (max-width: 992px) {
   .lp-hero-grid {
     flex-direction: column;
-    text-align: center;
     padding: 2rem;
-  }
-
-  .lp-hero-copy {
-    margin-left: 0;
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
   }
 
-  .lp-actions {
-    justify-content: center;
-  }
-
-  .lead {
-    text-align: justify;
+  .lp-hero-media {
+    margin-bottom: 1.5rem;
   }
 
   .hero-portrait {
@@ -205,5 +199,10 @@ body, html, #root {
   .role { font-size: 1rem; }
   .lead { font-size: 0.95rem; line-height: 1.5; }
   .hero-portrait { max-width: 280px; }
+  .lp-actions {
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: center;
+  }
   .lp-actions .btn { padding: 0.6rem 1rem; font-size: 0.9rem; }
 }

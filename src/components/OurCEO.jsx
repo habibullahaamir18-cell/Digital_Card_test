@@ -41,15 +41,15 @@ In 2023, Dr. Najabat co-founded Revive Medical Technologies Inc. (RMT), a U.S.-b
                     fontWeight: "600",
                     color: "#0077b5",
                     cursor: "pointer",
-                    marginLeft: "6px",
                     display: "inline-block",
+                    marginTop: "0.5rem",
                   }}
                 >
                   {expanded ? "Read Less" : "Read More"}
                 </span>
               </p>
 
-              <div className="lp-actions" style={{ marginTop: "1rem" }}>
+              <div className="lp-actions">
                 <a
                   className="btn primary"
                   href="https://www.rmt-usa.com/"
