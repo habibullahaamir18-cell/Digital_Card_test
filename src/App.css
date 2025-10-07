@@ -3,37 +3,49 @@ body, html, #root {
   margin: 0;
   padding: 0;
   height: 100%;
+  width: 100%;
+  background: #ffffff; /* clean white */
   font-family: "Segoe UI", Arial, sans-serif;
-  background: #f8f9fa;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden; /* hide scroll during splash */
 }
 
 /* Splash Screen */
 .splash-screen {
-  background: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
   height: 100vh;
-  width: 100%;
+  width: 100vw;
+  background: #ffffff; /* full white background */
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 9999;
 }
 
 .splash-screen img {
-  width: 180px;
-  animation: fadeInScale 1.5s ease-in-out;
+  width: 280px; /* bigger logo */
+  animation: logoPop 1.6s ease-in-out forwards;
 }
 
 /* Main Container */
+.main {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;       /* vertically center */
+  justify-content: center;   /* horizontally center */
+  background: #ffffff;
+}
+
 .container {
   text-align: center;
   background: #fff;
   padding: 40px 30px;
   border-radius: 20px;
   box-shadow: 0px 6px 20px rgba(0,0,0,0.1);
-  max-width: 360px;
   width: 90%;
+  max-width: 360px;
   animation: slideUp 0.8s ease-in-out;
 }
 
@@ -90,7 +102,7 @@ p {
 }
 
 .btn-linkedin {
-  background: #0077B5; /* LinkedIn blue */
+  background: #0077B5;
 }
 
 .btn-linkedin:hover {
@@ -98,7 +110,7 @@ p {
 }
 
 .btn-whatsapp {
-  background: #25D366; /* WhatsApp green */
+  background: #25D366;
 }
 
 .btn-whatsapp:hover {
@@ -111,9 +123,10 @@ p {
 }
 
 /* Animations */
-@keyframes fadeInScale {
-  from { opacity: 0; transform: scale(0.8); }
-  to { opacity: 1; transform: scale(1); }
+@keyframes logoPop {
+  0% { opacity: 0; transform: scale(0.6); }
+  60% { opacity: 1; transform: scale(1.2); }
+  100% { opacity: 1; transform: scale(1); }
 }
 
 @keyframes slideUp {
