@@ -1,23 +1,20 @@
-import React, { useState, useEffect } from "react";
-import "./App.css";
-import logo from "./assets/revive-logo.png";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import OurCEO from "./components/OurCEO";
+import OurCTO from "./components/OurCTO";
+import OurBDM from "./components/OurBDM";
 
 export default function App() {
-  const [loading, setLoading] = useState(true);
+  return (
+    <Router>
+      <nav style={{ textAlign: "center", margin: "20px" }}>
+        <Link to="/ceo">CEO</Link> | <Link to="/cto">CTO</Link> | <Link to="/bdm">BDM</Link>
+      </nav>
 
-  useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2500); // 2.5s splash
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (loading) {
-    return (
-      <div className="splash-screen">
-        <img src={logo} alt="Revive Logo" className="splash-logo" />
-      </div>
-    );
-  }
-
-  return <OurCEO />;
+      <Routes>
+        <Route path="/ceo" element={<OurCEO />} />
+        <Route path="/cto" element={<OurCTO />} />
+        <Route path="/bdm" element={<OurBDM />} />
+      </Routes>
+    </Router>
+  );
 }

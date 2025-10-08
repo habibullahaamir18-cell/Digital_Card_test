@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import WebGLBackground from "./WebGLBackground";
 import logo from "../assets/revive-logo.png";
-import ceo from "../assets/ceo.png"; // Replace with actual image file
-import tablogo from "../assets/tablogo.png"; // RMT logo
+import ceo from "../assets/ceo.png";
+import tablogo from "../assets/tablogo.png";
 
 export default function OurCEO() {
   const [expanded, setExpanded] = useState(false);
@@ -23,61 +23,32 @@ In 2023, Dr. Najabat co-founded Revive Medical Technologies Inc. (RMT), a U.S.-b
         <WebGLBackground />
         <div className="lp-shell">
           <div className="lp-hero-grid">
-
-            {/* Left: CEO Image */}
             <div className="lp-hero-media">
               <img src={ceo} alt="Prof. Dr. Murtaza Najabat Ali" className="hero-portrait" />
             </div>
-
-            {/* Right: CEO Info */}
             <div className="lp-hero-copy">
               <img src={logo} alt="Revive Logo" className="lp-brand" />
               <h1>Prof. Dr. Murtaza Najabat Ali</h1>
               <p className="role">Chief Executive Officer</p>
-
               <p className="lead">
                 {expanded ? fullText : shortText}
-                <span
-                  onClick={() => setExpanded(!expanded)}
-                  className="read-more"
-                >
+                <span onClick={() => setExpanded(!expanded)} className="read-more">
                   {expanded ? "Read Less" : "Read More"}
                 </span>
               </p>
-
               <div className="lp-actions">
-                <a
-                  className="btn rmt"
-                  href="https://www.rmt-usa.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src={tablogo}
-                    alt="RMT Logo"
-                    style={{ width: "20px", height: "20px" }}
-                  />
+                <a className="btn rmt" href="https://www.rmt-usa.com/" target="_blank" rel="noopener noreferrer">
+                  <img src={tablogo} alt="RMT Logo" style={{ width: "20px", height: "20px" }} />
                   RMT
                 </a>
-                <a
-                  className="btn blue"
-                  href="https://www.linkedin.com/in/prof-dr-murtaza-najabat-ali-ceng-uk-fimeche-pe-55a4469"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a className="btn blue" href="https://www.linkedin.com/in/prof-dr-murtaza-najabat-ali-ceng-uk-fimeche-pe-55a4469" target="_blank" rel="noopener noreferrer">
                   <FaLinkedin /> LinkedIn
                 </a>
-                <a
-                  className="btn green"
-                  href="https://wa.me/923348558828"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a className="btn green" href="https://wa.me/923348558828" target="_blank" rel="noopener noreferrer">
                   <FaWhatsapp /> WhatsApp
                 </a>
               </div>
             </div>
-
           </div>
         </div>
       </section>
