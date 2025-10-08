@@ -45,51 +45,54 @@ body, html, #root {
   position: relative;
   z-index: 1;
   overflow: hidden;
-  padding: 2rem 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .lp-hero {
+  position: relative;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   min-height: 100vh;
-  width: 100%;
+  padding: 2rem;
 }
 
 .lp-shell {
   position: relative;
   z-index: 2;
-  max-width: 1200px;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+/* Hero Grid */
 .lp-hero-grid {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: center; /* center horizontally */
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(12px);
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
   border-radius: 20px;
   padding: 3rem;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   flex-wrap: wrap;
+  max-width: 950px;
+  width: 100%;
 }
 
 /* Left Side Image */
 .lp-hero-media {
-  flex: 0.8;
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 300px;
+  margin-bottom: 1.5rem;
 }
 
 .hero-portrait {
   width: 100%;
-  max-width: 380px;
+  max-width: 350px;
   border-radius: 20px;
   object-fit: cover;
   opacity: 0.92;
@@ -102,24 +105,22 @@ body, html, #root {
 
 /* Right Side Text */
 .lp-hero-copy {
-  flex: 1.2;
-  min-width: 280px;
-  margin: 0;
-  text-align: center;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 1rem;
 }
 
 .lp-brand {
   width: 120px;
-  margin: 0 auto 1rem auto;
-  display: block;
+  margin-bottom: 1rem;
 }
 
 .lp-hero-copy h1 {
-  font-size: 2.2rem;
+  font-size: 2rem;
   color: #222;
   margin: 0.3rem 0;
 }
@@ -135,15 +136,17 @@ body, html, #root {
   color: #444;
   font-size: 1rem;
   line-height: 1.6;
+  text-align: justify;
+  text-align-last: center;
   margin-bottom: 1.5rem;
-  text-align: center;
 }
 
-.lead span {
+.read-more {
   font-weight: 600;
   color: #0077b5;
   cursor: pointer;
-  margin-left: 6px;
+  display: inline-block;
+  margin-top: 0.5rem;
 }
 
 /* Buttons */
@@ -162,47 +165,60 @@ body, html, #root {
   padding: 0.7rem 1.2rem;
   border-radius: 8px;
   text-decoration: none;
-  color: #fff;
   font-weight: 500;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
 }
 
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-.btn.primary { background: #333; }
-.btn.blue { background: #0077b5; }
-.btn.green { background: #25d366; }
+/* RMT Button */
+.btn.rmt {
+  background-color: #f1f1f1;
+  color: #000;
+}
 
-/* Mobile Responsiveness */
+.btn.rmt:hover {
+  background-color: #e0e0e0;
+  color: #000;
+}
+
+/* LinkedIn / WhatsApp */
+.btn.blue { background: #0077b5; color: #fff; }
+.btn.green { background: #25d366; color: #fff; }
+
+/* Mobile Responsive */
 @media (max-width: 992px) {
   .lp-hero-grid {
     flex-direction: column;
-    padding: 2rem;
-    align-items: center;
+    text-align: center;
+    padding: 2rem 1rem;
   }
 
-  .lp-hero-media {
+  .lp-brand {
+    order: -2; /* Logo moves to top */
     margin-bottom: 1.5rem;
   }
 
-  .hero-portrait {
-    max-width: 320px;
+  .lp-hero-media {
+    order: -1; /* Image after logo */
+    margin-bottom: 1.5rem;
   }
-}
 
-@media (max-width: 576px) {
-  .lp-hero-copy h1 { font-size: 1.8rem; }
-  .role { font-size: 1rem; }
-  .lead { font-size: 0.95rem; line-height: 1.5; }
-  .hero-portrait { max-width: 280px; }
-  .lp-actions {
-    flex-direction: column;
-    gap: 0.6rem;
-    align-items: center;
+  .lp-hero-copy {
+    max-width: 420px;
+    padding: 0 1rem;
   }
-  .lp-actions .btn { padding: 0.6rem 1rem; font-size: 0.9rem; }
+
+  .hero-portrait {
+    max-width: 280px;
+    width: 100%;
+  }
+
+  .lp-actions {
+    justify-content: center;
+  }
 }
