@@ -32,7 +32,7 @@ export default function OurBDM() {
                 </span>
               </p>
               <div className="lp-actions">
-                <a className="btn rmt" href="https://www.rmt-usa.com/" target="_blank" rel="noopener noreferrer">
+                <a className="btn rmt" href="https://rmt-usa.com/" target="_blank" rel="noopener noreferrer">
                   <img src={tablogo} alt="RMT Logo" style={{ width: "20px", height: "20px" }} />
                   RMT
                 </a>
